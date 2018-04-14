@@ -35,7 +35,7 @@ read opt
               read vm_name
               if [ -f $vm_list_file ]; then
                 grep -w "$vm_name" $vm_list_file
-                if [ $? !=0 ]; then
+                if [ $? != 0 ]; then
                     exit 1
                 fi
               fi
