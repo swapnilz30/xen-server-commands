@@ -1,6 +1,7 @@
 #!/bin/bash
 
 xen_cmd=xe
+vm_list_file=/tmp/vm_list.txt
 while getopts u:i: name
 do
 	case $name in
@@ -28,12 +29,12 @@ read opt
     case $opt in
         1)
          # ssh $user_name@$host_ip "$xen_cmd vm-list"
-              ssh $user_name@$host_ip "$xen_cmd vm-list | grep name-label | cut -d':' -f2" > /tmp/vms.txt
-              sed 's/^ *//'  /tmp/vms.txt
+              ssh $user_name@$host_ip "$xen_cmd vm-list | grep name-label | cut -d':' -f2" > $vm_list_file
+              sed 's/^ *//'  $vm_list_file
               echo "Enter the vm name from the list."
               read vm_name
-              if [ -f /tmp/vms.txt ]; then
-                grep -w "$vm_name" /tmp/vms.txt
+              if [ -f $vm_list_file ]; then
+                grep -w "$vm_name" $vm_list_file
                 if [ $? !=0 ]; then
                     exit 1
                 fi
@@ -73,3 +74,5 @@ read opt
 else
     echo "user name and host ip should not be empty."
 fi
+
+rm -rf $vm_list_file
