@@ -33,7 +33,7 @@ read opt
               echo "Enter the vm name from the list."
               read vm_name
               if [ -f /tmp/vms.txt ]; then
-                grep -w $vm_name /tmp/vms.txt
+                grep -w "$vm_name" /tmp/vms.txt
                 if [ $? !=0 ]; then
                     exit 1
                 fi
@@ -46,15 +46,15 @@ read opt
               read vm_state
               case $vm_state in
                 1)
-                    ssh $user_name@$host_ip "$xen_cmd vm-start vm='$vm_name' && xen_cmd vm-list name-label='$vm_name'"
+                    ssh $user_name@$host_ip "$xen_cmd vm-start vm='$vm_name' && $xen_cmd vm-list name-label='$vm_name'"
                     ;;
                 2)
-                    ssh $user_name@$host_ip "$xen_cmd vm-shutdown vm='$vm_name' && xen_cmd vm-list name-label='$vm_name'"
+                    ssh $user_name@$host_ip "$xen_cmd vm-shutdown vm='$vm_name' && $xen_cmd vm-list name-label='$vm_name'"
                     ;;
-                3)  ssh $user_name@$host_ip "$xen_cmd vm-reboot vm='$vm_name' && xen_cmd vm-list name-label='$vm_name'"
+                3)  ssh $user_name@$host_ip "$xen_cmd vm-reboot vm='$vm_name' && $xen_cmd vm-list name-label='$vm_name'"
                     ;;
                 4)
-                    ssh $user_name@$host_ip xen_cmd vm-list name-label='$vm_name'"
+                    ssh $user_name@$host_ip "$xen_cmd vm-list name-label='$vm_name'"
                     ;;
                 *)
                     echo "Enter option from the list."
