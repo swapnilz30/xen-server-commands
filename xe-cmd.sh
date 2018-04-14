@@ -44,6 +44,7 @@ read opt
               echo "2. shutdown"
               echo "3. reboot"
               echo "4. state"
+              echo "operation:"
               read vm_state
               case $vm_state in
                 1)
