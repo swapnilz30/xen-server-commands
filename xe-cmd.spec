@@ -2,15 +2,16 @@ Name: xe-cmd
 Version: 1.0
 Release: %{build_num}
 License: GPL
-Source: ${pkg_name}-${version}.tar.gz
+Source: xe-cmd-1.0.tar.gz
 BuildArch: noarch
 Summary: Xen Server Command
 
 %description
 Xen Server Command
 
-#%prep
-%setup -q -n ${pkg_name}-%{verion}
+%prep
+%setup -q
+#%setup -q -n ${pkg_name}-%{verion}
 
 %install
 #install -d $RPM_BUILD_ROOT/xe-cmd
