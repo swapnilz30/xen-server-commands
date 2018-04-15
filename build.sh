@@ -13,6 +13,7 @@ tar -czvf ${pkg_name}.tar.gz ${pkg_name}
 echo "RPM_SOURCE_DIR: $RPM_SOURCE_DIR"
 cp ${pkg_name}.tar.gz $RPM_SOURCE_DIR
 
+
 while getopts b: name
 do
 	case $name in
