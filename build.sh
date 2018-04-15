@@ -1,5 +1,5 @@
 #!/bin/bash
-
+verion=1.0
 spec_file=xe-cmd.spec
 pkg_name=xe-cmd
 
@@ -11,7 +11,7 @@ RPM_BUILD_ROOT="/home/jenkins/rpmbuild/BUILDROOT/${pkg_name}-${release}.x86_64"
 cd $WORKSPACE/xen-server-commands
 tar -czvf ${pkg_name}.tar.gz ${pkg_name}
 echo "RPM_SOURCE_DIR: $RPM_SOURCE_DIR"
-cp ${pkg_name}.tar.gz $RPM_SOURCE_DIR
+cp ${pkg_name}-${version}.tar.gz $RPM_SOURCE_DIR
 
 while getopts b: name
 do
@@ -29,7 +29,7 @@ done;
 
 
 
-rpmbuild -ba --define "build_num $build_num" $spec_file
+rpmbuild -ba --define "build_num $build_num" --define "version $version" $spec_file
 
 if [ $? == 0  ]; then
    echo "success"
