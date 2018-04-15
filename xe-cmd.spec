@@ -10,7 +10,7 @@ Summary: Xen Server Command
 Xen Server Command
 
 %prep
-%setup -q -n xe-cmd-%{verion}
+%setup -q -n ${pkg_name}-%{verion}
 
 %install
 #install -d $RPM_BUILD_ROOT/xe-cmd
