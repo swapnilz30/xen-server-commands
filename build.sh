@@ -1,9 +1,9 @@
 #!/bin/bash
 
 spec_file=xe-cmd.spec
-pkg_name=xen-server-commands
+pkg_name=xe-cmd
 
-cd $WORKSPACE
+cd $WORKSPACE/xen-server-commands
 tar -czvf ${pkg_name}.tar.gz ${pkg_name}
 cp ${pkg_name}.tar.gz $RPM_SOURCE_DIR
 
