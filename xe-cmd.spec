@@ -9,9 +9,9 @@ Summary: Xen Server Command
 %description
 Xen Server Command
 
-#%prep
+%prep
 #%setup -q
-%setup -q -n ${pkg_name}-1.0
+%setup -q -n ${pkg_name}
 
 %install
 #mkdir $RPM_BUILD_ROOT/bin
