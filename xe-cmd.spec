@@ -13,7 +13,7 @@ Xen Server Command
 
 %install
 #install -d $RPM_BUILD_ROOT/xe-cmd
-install xe-cmd.sh $RPM_BUILD_ROOT/xe-cmd.sh
+install ./xe-cmd.sh $RPM_BUILD_ROOT/xe-cmd.sh
 
 %files
 %attr(0755,root,root) /bin/xe-cmd.sh
