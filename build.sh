@@ -29,7 +29,7 @@ done;
 
 
 
-rpmbuild -ba --define "build_num $build_num" --define "version $version" $spec_file
+rpmbuild -ba --define "build_num $build_num" --define "version $version" --define "pkg_name $pkg_name" $spec_file
 
 if [ $? == 0  ]; then
    echo "success"
