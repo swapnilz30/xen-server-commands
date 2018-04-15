@@ -11,7 +11,7 @@ Xen Server Command
 
 #%prep
 #%setup -q
-%setup -q -n ${pkg_name}
+%setup -q -n ${pkg_name}-1.0
 
 %install
 #mkdir $RPM_BUILD_ROOT/bin
