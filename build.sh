@@ -3,6 +3,9 @@
 spec_file=xe-cmd.spec
 pkg_name=xe-cmd
 
+
+RPM_SOURCE_DIR="/home/jenkins/rpmbuild/SOURCES"
+RPM_BUILD_DIR="/home/jenkins/rpmbuild/BUILD"
 RPM_BUILD_ROOT="/home/jenkins/rpmbuild/BUILDROOT/${pkg_name}-${release}.x86_64"
 
 cd $WORKSPACE/xen-server-commands
