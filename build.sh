@@ -1,5 +1,5 @@
 #!/bin/bash
-verion=1.0
+version=1.0
 spec_file=xe-cmd.spec
 pkg_name=xe-cmd
 
