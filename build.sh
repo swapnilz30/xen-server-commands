@@ -1,7 +1,7 @@
 #!/bin/bash
 version=1.0
 spec_file=xe-cmd.spec
-pkg_name=xe-cmd
+pkg_name=xe-cmd-1.0
 
 
 RPM_SOURCE_DIR="/home/jenkins/rpmbuild/SOURCES"
