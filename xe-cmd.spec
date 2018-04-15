@@ -9,7 +9,7 @@ Summary: Xen Server Command
 %description
 Xen Server Command
 
-%prep
+#%prep
 %setup -q -n ${pkg_name}-%{verion}
 
 %install
