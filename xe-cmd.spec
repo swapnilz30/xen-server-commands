@@ -1,4 +1,4 @@
-Name: xe-cmd
+Name: %{pkg_name}
 Version: 1.0
 Release: %{build_num}
 License: GPL
@@ -11,7 +11,7 @@ Xen Server Command
 
 %prep
 #%setup -q
-%setup -q -n ${pkg_name}
+%setup -q -n %{pkg_name}
 
 %install
 #mkdir $RPM_BUILD_ROOT/bin
